@@ -6,13 +6,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Edit Category</h1>
+                <h1 class="m-0 text-dark">Create about</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route('website') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Category list</a></li>
-                    <li class="breadcrumb-item active">Edit Category</li>
+                    <li class="breadcrumb-item"><a href="{{ route('about.index') }}">about list</a></li>
+                    <li class="breadcrumb-item active">Create about</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,30 +28,32 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3 class="card-title">Edit Category - {{ $category->name }}</h3>
-                            <a href="{{ route('category.index') }}" class="btn btn-primary">Go Back to Category List</a>
+                            <h3 class="card-title">Create about</h3>
+                            <a href="{{ route('about.index') }}" class="btn btn-primary">Go Back to about List</a>
                         </div>
                     </div>
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                                <form action="{{ route('category.update', [$category->id]) }}" method="POST">
-                                    @csrf 
-                                    @method('PUT')
+                                <form action="{{ route('about.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="card-body">
-                                        @include('includes.errors')
                                         <div class="form-group">
-                                            <label for="name">Category name</label>
-                                            <input type="name" name="name" class="form-control" value="{{ $category->name }}" placeholder="Enter name">
+                                            <label for="name">Title</label>
+                                            <input type="name" name="title" class="form-control" id="name" placeholder="Enter name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Description</label>
-                                            <textarea name="description" id="description" rows="4" class="form-control"
-                                                placeholder="Enter description"> {{ $category->description }} </textarea>
+                                            <label for="name">Title</label>
+                                            <input type="name" name="sub_title" class="form-control" id="name" placeholder="Enter name">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="featured">Image</label>
+                                            <input type="file" name="image" class="form-control">
+                                      </div>
                                     </div>
+
                                     <div class="card-footer">
-                                        <button type="submit" class="btn btn-lg btn-primary">Update Category</button>
+                                        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
                                     </div>
                                 </form>
                             </div>

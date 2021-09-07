@@ -6,12 +6,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Category List</h1>
+                <h1 class="m-0 text-dark">about List</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="">Home</a></li>
-                    <li class="breadcrumb-item active">Category list</li>
+                    <li class="breadcrumb-item active">about list</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -27,8 +27,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3 class="card-title">Category List</h3>
-                            <a href="{{ route('category.create') }}" class="btn btn-primary">Create Category</a>
+                            <h3 class="card-title">about List</h3>
+                            <a href="{{ route('about.create') }}" class="btn btn-primary">Create about</a>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -37,35 +37,37 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Name</th>
-                                    <th>Slug</th>
-                                    <th>Post Counnt</th>
+                                    <th>Title</th>
+                                    <th>Sub Title</th>
+                                    <th>Image</th>
                                     <th style="width: 40px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+
+                                @foreach ($abouts as $about )
+
+
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ $about->id }}</td>
+                                        <td>{{ $about->title }}</td>
+                                        <td>{{ $about->sub_title }}</td>
                                         <td>
-                                            
+                                            <div style="max-width: 70px; max-height:70px;overflow:hidden">
+                                                <img src="{{url('about_image/',$about->image)}}" class="img-fluid img-rounded" alt="">
+                                            </div>
                                         </td>
                                         <td class="d-flex">
-                                            <a href="" class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
-                                            <form action="" class="mr-1" method="POST">
+                                            <a href="{{ route('about.edit', [$about->id]) }}" class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
+                                            <form action="{{ route('about.destroy', [$about->id]) }}" class="mr-1" method="POST">
                                                 @method('DELETE')
-                                                @csrf 
+                                                @csrf
                                                 <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
                                             </form>
                                           <a href="" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td colspan="5">
-                                            <h5 class="text-center">No categories found.</h5>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>

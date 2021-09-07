@@ -62,25 +62,25 @@
             <a href="{{ route('dashboard') }}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard   
+                Dashboard
               </p>
             </a>
           </li>
           <li class="nav-item mt-auto">
-            <a href="{{ route('category.index') }}" class="nav-link">
+            <a href="{{ route('masthead.index') }}" class="nav-link">
               <i class="nav-icon fas fa-tags"></i>
               <p>
-                Categories
+                Masthead
               </p>
-            </a>                    
+            </a>
           </li>
           <li class="nav-item mt-auto">
-            <a href="{{ route('tag.index') }}" class="nav-link">
+            <a href="{{ route('about.index') }}" class="nav-link">
               <i class="nav-icon fas fa-tag"></i>
               <p>
-                Tags
+                About
               </p>
-            </a>                    
+            </a>
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('post.index') }}" class="nav-link">
@@ -88,7 +88,7 @@
               <p>
                 Post
               </p>
-            </a>                    
+            </a>
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('contact.index') }}" class="nav-link">
@@ -96,7 +96,7 @@
               <p>
                 Messages
               </p>
-            </a>                    
+            </a>
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('user.index') }}" class="nav-link">
@@ -136,7 +136,7 @@
               <p class="mb-0">
                 View Website
               </p>
-            </a>                    
+            </a>
           </li>
         </ul>
       </nav>

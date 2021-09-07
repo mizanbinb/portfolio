@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/home', 'App\Http\Controllers\FrontEndController@home')->name('website');
+Route::get('/', 'App\Http\Controllers\FrontEndController@home')->name('website');
 
 Auth::routes();
 
@@ -26,13 +26,13 @@ Auth::routes();
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard','App\Http\Controllers\DashboardController@index')->name('dashboard');
 
-    Route::resource('category', 'App\Http\Controllers\CategoryController');
-    Route::resource('tag', 'App\Http\Controllers\TagController');
+    Route::resource('masthead', 'App\Http\Controllers\MastheadController');
+    Route::resource('about', 'App\Http\Controllers\AboutController');
     Route::resource('post', 'App\Http\Controllers\PostController');
     Route::resource('user', 'App\Http\Controllers\UserController');
     Route::get('/profile', 'App\Http\Controllers\UserController@profile')->name('user.profile');
     Route::post('/profile', 'App\Http\Controllers\UserController@profile_update')->name('user.profile.update');
-    
+
     // setting
     Route::get('setting', 'App\Http\Controllers\SettingController@edit')->name('setting.index');
     Route::post('setting', 'App\Http\Controllers\SettingController@update')->name('setting.update');
