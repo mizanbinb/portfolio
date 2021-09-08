@@ -3,7 +3,7 @@
 @section('content')
 
         <!-- Masthead-->
- <header class="masthead"  style="background-image:url('{{asset('masthead_image/'.$masthead->image)}}');">
+ <header class="masthead"  style="background-image:url('{{url('masthead_image/',$masthead->image)}}');">
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
@@ -18,7 +18,7 @@
             </div>
         </header>
         <!-- About-->
-        <section class="page-section bg-primary" id="about"style=" background-image:url('{{asset('about_image/'.$about->image)}}');">
+        <section class="page-section bg-primary" id="about"style=" background-image:url('{{url('about_image/',$about->image)}}');">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
@@ -40,7 +40,7 @@
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="{{$service->icon}}"></i></div>
-                            <h3 class="h4 mb-2">{{$service->sub_title}}</h3>
+                            <h3 class="h4 mb-2">{{$service->title}}</h3>
                             <p class="text-muted mb-0">{{$service->description}}</p>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
+                        <form id="contactForm" method="POST" action="/subscribe" data-sb-form-api-token="API_TOKEN">
+                        {{ csrf_field() }}
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                                 <label for="name">Full name</label>

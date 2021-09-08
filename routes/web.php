@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +19,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'App\Http\Controllers\FrontEndController@home')->name('website');
+Route::post('/subscribe', function(){
+   dd($reqest->all())
 
-Auth::routes();
+    
+});
 
-// if (\App\Models\User()->count() < 1) {
-//     Auth::routes();
-// } else {
-//     Auth::routes(['register' => false]);
-// }
+Auth::routes(['register' => false]);
 // Admin Panel Routes
 Route::group(['prefix' => 'admin'], function  () {
     Route::get('/dashboard','App\Http\Controllers\DashboardController@index')->name('dashboard');
@@ -48,3 +48,6 @@ Route::group(['prefix' => 'admin'], function  () {
     Route::get('/contact/show/{id}', 'App\Http\Controllers\ContactController@show')->name('contact.show');
     Route::delete('/contact/delete/{id}', 'App\Http\Controllers\ContactController@destroy')->name('contact.destroy');
 });
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

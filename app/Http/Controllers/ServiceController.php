@@ -40,7 +40,6 @@ class ServiceController extends Controller
         // The request validated and this code will get run
         $this->validate($request, [
             'title' => 'required',
-            'sub_title' => 'required',
             'description' => 'required',
             'icon' => 'required',
             'image' => 'required',
@@ -59,7 +58,6 @@ class ServiceController extends Controller
 
         $service           = new Service;
         $service->title     = $request->title;
-        $service->sub_title    = $request->sub_title;
         $service->description    = $request->description;
         $service->icon    = $request->icon;
         $service->image    = $image_name;
@@ -103,7 +101,6 @@ class ServiceController extends Controller
          // The request validated and this code will get run
          $this->validate($request, [
             'title' => 'required',
-            'sub_title' => 'required',
             'description' => 'required',
         ]);
 
@@ -119,7 +116,6 @@ class ServiceController extends Controller
         }
 
         $service->title     = $request->title;
-        $service->sub_title    = $request->sub_title;
         $service->description    = $request->description;
         $service->icon    = $request->icon;
         $service->image    = $image_name;

@@ -83,6 +83,14 @@
             </a>
           </li>
           <li class="nav-item mt-auto">
+            <a href="{{ route('contact.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-tag"></i>
+              <p>
+                Contact
+              </p>
+            </a>
+          </li>
+          <li class="nav-item mt-auto">
             <a href="{{ route('service.index') }}" class="nav-link">
               <i class="nav-icon fas fa-pen-square"></i>
               <p>
@@ -120,6 +128,14 @@
               <i class="nav-icon far fa-user"></i>
               <p>
                 Your Profile
+              </p>
+            </a>
+          </li>
+           <li class="nav-item mt-auto">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Logout
               </p>
             </a>
           </li>

@@ -38,7 +38,6 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Title</th>
-                                    <th>Sub Title</th>
                                     <th>Image</th>
                                     <th>Icon</th>
                                     <th>Description</th>
@@ -53,7 +52,6 @@
                                     <tr>
                                         <td>{{ $service->id }}</td>
                                         <td>{{ $service->title }}</td>
-                                        <td>{{ $service->sub_title }}</td>
                                         <td>
                                             <div style="max-width: 70px; max-height:70px;overflow:hidden">
                                                 <img src="{{url('service_image/',$service->image)}}" class="img-fluid img-rounded" alt="">

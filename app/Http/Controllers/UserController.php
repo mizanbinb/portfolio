@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Session;
-use App\Models\Contact;
+
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::all();
-        return view('admin.contact.index',compact('contacts'));
+        //
     }
 
     /**
@@ -36,36 +35,27 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-        'name' => 'required',
-        'email' => 'required|email',
-        'phone' => 'required',
-        'message' => 'required'
-     ]);
-
-     ContactUs::create($request->all());
-    Session::flash('success', 'portfolio created succesfully.');
-    return redirect()->back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(User $user)
     {
-       return view('admin.contact.show')
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(User $user)
     {
         //
     }
@@ -74,10 +64,10 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -85,10 +75,10 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(User $user)
     {
         //
     }

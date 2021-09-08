@@ -44,10 +44,6 @@
                                             <input type="name" name="title" value="{{ $service->title }}" class="form-control" id="name" placeholder="Enter name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="name">Sub Title</label>
-                                            <input type="name" name="sub_title"  value="{{ $service->sub_title }}" class="form-control" id="name" placeholder="Enter name">
-                                        </div>
-                                        <div class="form-group">
                                             <label for="name">Description</label>
                                             <input type="name" name="description"  value="{{ $service->description }}" class="form-control" id="name" placeholder="Enter name">
                                         </div>
