@@ -11290,7 +11290,8 @@ body {
 }
 
 .text-white-75 {
-  color: rgba(255, 255, 255, 0.75) !important;
+  /* color: rgba(255, 255, 255, 0.75) !important; */
+  color: rgb(23, 175, 23);
 }
 
 .btn-xl {

@@ -48,7 +48,7 @@ class AboutController extends Controller
             $image_enc_name = rand(0,9999).md5($file->getClientOriginalName());
             $image_ext = $file->getClientOriginalExtension();
             $image_name = $image_enc_name.".".$image_ext;
-            $destinationPath = "about_image";
+            $destinationPath = "service_image";
             $file->move($destinationPath,$image_name);
         }else{
             $image_name = "";

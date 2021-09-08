@@ -83,23 +83,23 @@
             </a>
           </li>
           <li class="nav-item mt-auto">
-            <a href="{{ route('post.index') }}" class="nav-link">
+            <a href="{{ route('service.index') }}" class="nav-link">
               <i class="nav-icon fas fa-pen-square"></i>
               <p>
-                Post
+                Service
               </p>
             </a>
           </li>
           <li class="nav-item mt-auto">
-            <a href="{{ route('contact.index') }}" class="nav-link">
+            <a href="{{ route('portfolio.index') }}" class="nav-link">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
-                Messages
+                Portfolio
               </p>
             </a>
           </li>
           <li class="nav-item mt-auto">
-            <a href="{{ route('user.index') }}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 User

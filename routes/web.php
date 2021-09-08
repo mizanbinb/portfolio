@@ -23,13 +23,13 @@ Auth::routes();
 
 
 // Admin Panel Routes
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin'], function  () {
     Route::get('/dashboard','App\Http\Controllers\DashboardController@index')->name('dashboard');
 
     Route::resource('masthead', 'App\Http\Controllers\MastheadController');
     Route::resource('about', 'App\Http\Controllers\AboutController');
-    Route::resource('post', 'App\Http\Controllers\PostController');
-    Route::resource('user', 'App\Http\Controllers\UserController');
+    Route::resource('service', 'App\Http\Controllers\ServiceController');
+    Route::resource('portfolio', 'App\Http\Controllers\PortfolioController');
     Route::get('/profile', 'App\Http\Controllers\UserController@profile')->name('user.profile');
     Route::post('/profile', 'App\Http\Controllers\UserController@profile_update')->name('user.profile.update');
 

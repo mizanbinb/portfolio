@@ -14,13 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index');
+        //
     }
 
-
-    public function profile(){
-        return view('admin.user.profile');
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        //
     }
 
     /**
@@ -61,7 +57,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-         return view('admin.user.edit');
+        //
     }
 
     /**
