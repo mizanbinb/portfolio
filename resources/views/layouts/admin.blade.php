@@ -99,10 +99,10 @@
             </a>
           </li>
           <li class="nav-item mt-auto">
-            <a href="" class="nav-link">
+            <a href="{{ route('cv.index') }}" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
-                User
+                Cv
               </p>
             </a>
           </li>
@@ -123,14 +123,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item mt-auto">
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
-              <i class="nav-icon fas fa-sign-out-alt"></i>
-              <p>
-                Logout
-              </p>
-            </a>
-          </li>
+
           <li class="text-center mt-5">
             <a href="" class="btn btn-primary text-white" target="_blank">
               <p class="mb-0">

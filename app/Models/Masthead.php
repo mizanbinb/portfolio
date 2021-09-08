@@ -9,3 +9,4 @@ class Masthead extends Model
 {
     use HasFactory;
 }
+

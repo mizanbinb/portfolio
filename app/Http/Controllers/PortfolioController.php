@@ -99,9 +99,8 @@ class PortfolioController extends Controller
     {
         // The request validated and this code will get run
         $this->validate($request, [
-            'category_name' => 'required|string',
-            'project_name' => 'required|string',
-            'image' => 'required',
+            'category_name' => 'required',
+            'project_name' => 'required',
         ]);
 
         if($request->hasFile('image')){

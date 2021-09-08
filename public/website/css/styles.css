@@ -7750,7 +7750,7 @@ textarea.form-control-lg {
 
 .text-white {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  color: forestgreen !important;
 }
 
 .text-body {
@@ -11388,6 +11388,7 @@ header.masthead {
 }
 header.masthead h1, header.masthead .h1 {
   font-size: 2.25rem;
+  color: forestgreen;
 }
 @media (min-width: 992px) {
   header.masthead {

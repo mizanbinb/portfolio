@@ -15,6 +15,8 @@ class CreateCvsTable extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('cv');
             $table->timestamps();
         });
     }

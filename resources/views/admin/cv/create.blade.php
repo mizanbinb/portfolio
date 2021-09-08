@@ -6,13 +6,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Edit portfolio</h1>
+                <h1 class="m-0 text-dark">Create cv</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ route('website') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('portfolio.index') }}">portfolio list</a></li>
-                    <li class="breadcrumb-item active">Create portfolio</li>
+                    <li class="breadcrumb-item"><a href="{{ route('cv.index') }}">cv list</a></li>
+                    <li class="breadcrumb-item active">Create cv</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,35 +28,24 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3 class="card-title">Edit portfolio</h3>
-                            <a href="{{ route('portfolio.index') }}" class="btn btn-primary">Go Back to portfolio List</a>
+                            <h3 class="card-title">Create cv</h3>
+                            <a href="{{ route('cv.index') }}" class="btn btn-primary">Go Back to cv List</a>
                         </div>
                     </div>
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                                <form action="{{ route('portfolio.update', [$portfolio->id]) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('cv.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    @method('PUT')
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="name">Title</label>
-                                            <input type="name" name="category_name" value="{{ $portfolio->category_name }}" class="form-control" id="name" placeholder="Enter name">
+                                            <input type="name" name="title" class="form-control" id="name" placeholder="Enter name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="name">Sub Title</label>
-                                            <input type="name" name="project_name" value="{{ $portfolio->project_name }}" class="form-control" id="name" placeholder="Enter name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="image">Image</label>
-                                            <div class="custom-file">
-                                                <input type="file" name="image" class="custom-file-input" id="image">
-                                                <label class="custom-file-label" for="image">Choose file</label>
-                                            </div>
-                                            <div style="max-width: 70px; max-height:70px;">
-                                                <img src="{{url('portfolio_image/',$portfolio->image)}}" class="img-fluid img-rounded" alt="">
-                                            </div>
-                                        </div>
+                                            <label for="featured">Upload Cv</label>
+                                            <input type="file" name="cv" class="form-control">
+                                      </div>
                                     </div>
 
                                     <div class="card-footer">

@@ -34,59 +34,37 @@
                         <div class="row">
                             <div class="col-12 col-lg-8 offset-lg-2 col-md-8 offset-md-2">
                                 <div class="card-body">
-                                    <form action="{{ route('setting.update') }}" method="POST" enctype="multipart/form-data">
-                                        @csrf 
+                                    <form action="{{ route('setting.update', [$setting->id]) }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
                                         <div class="form-group">
-                                            <label for="name">Site Name</label>
-                                            <input type="name" name="name" value="" class="form-control" placeholder="Enter name">
+                                            <label for="name">Site Title</label>
+                                            <input type="name" name="site_title" value="{{ $setting->site_title }}" class="form-control" placeholder="Enter name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Site Icon</label>
+                                            <input type="name" name="icon" value="{{ $setting->icon }}" class="form-control" placeholder="Enter name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Contact Title</label>
+                                            <input type="name" name="contact_title" value="{{ $setting->contact_title }}" class="form-control" placeholder="Enter name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">Contact Sub Title</label>
+                                            <input type="name" name="contact_subtitle" value="{{ $setting->contact_subtitle }}" class="form-control" placeholder="Enter name">
                                         </div>
                                         <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="facebook">Facebook</label>
-                                                    <input type="facebook" name="facebook" value="" class="form-control" placeholder="facebook url">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="twitter">Twitter</label>
-                                                    <input type="twitter" name="twitter" value="" class="form-control" placeholder="twitter url">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="instagram">Instagram</label>
-                                                    <input type="instagram" name="instagram" value="" class="form-control" placeholder="instagram url">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="reddit">Reddit</label>
-                                                    <input type="reddit" name="reddit" value="" class="form-control" placeholder="reddit url">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="email">Email</label>
-                                                    <input type="email" name="email" value="" class="form-control" placeholder="email url">
-                                                </div>
-                                            </div>
+
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="copyright">Copyright</label>
-                                                    <input type="copyright" name="copyright" value="" class="form-control" placeholder="copyright">
+                                                    <input type="copyright" name="copyright" value="{{ $setting->copyright }}" class="form-control" placeholder="copyright">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="email">Contact Phone Number</label>
-                                                    <input type="text" name="phone" value="" class="form-control" placeholder="phone number">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="address">Location</label>
-                                                    <textarea name="address" id="address" class="form-control" rows="1" placeholder="enter address"></textarea>
+                                                    <input type="text" name="number" value="{{ $setting->number }}" class="form-control" placeholder="phone number">
                                                 </div>
                                             </div>
                                         </div>
@@ -101,14 +79,10 @@
                                                 </div>
                                                 <div class="col-4 text-right">
                                                     <div style="max-width: 100px; max-height: 100px;overflow:hidden; margin-left: auto">
-                                                        <img src="" class="img-fluid" alt="">
+                                                        <img src="{{url('logo_image/',$setting->site_logo)}}" class="img-fluid" alt="">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="description">Site Description</label>
-                                            <textarea name="description" id="description" rows="3" class="form-control" placeholder="Enter description"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-lg btn-primary">Update Post</button>
