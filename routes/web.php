@@ -19,15 +19,12 @@ use App\Models\User;
 // });
 
 Route::get('/', 'App\Http\Controllers\FrontEndController@home')->name('website');
-Route::post('/subscribe', function(){
-   dd($reqest->all())
+Route::post('/contact-form', [App\Http\Controllers\FrontEndController::class, 'storeContactForm'])->name('contact-form.store');
 
-    
-});
 
 Auth::routes(['register' => false]);
 // Admin Panel Routes
-Route::group(['prefix' => 'admin'], function  () {
+Route::group(['prefix' => 'admin','middleware' => ['auth']], function  () {
     Route::get('/dashboard','App\Http\Controllers\DashboardController@index')->name('dashboard');
 
     Route::resource('masthead', 'App\Http\Controllers\MastheadController');
@@ -36,18 +33,16 @@ Route::group(['prefix' => 'admin'], function  () {
     Route::resource('portfolio', 'App\Http\Controllers\PortfolioController');
     Route::resource('cv', 'App\Http\Controllers\CvController');
     Route::resource('setting', 'App\Http\Controllers\SettingController');
-    Route::get('/profile', 'App\Http\Controllers\UserController@profile')->name('user.profile');
-    Route::post('/profile', 'App\Http\Controllers\UserController@profile_update')->name('user.profile.update');
+    Route::resource('contact', 'App\Http\Controllers\ContactController');
+
 
     // // setting
     // Route::get('setting', 'App\Http\Controllers\SettingController@edit')->name('setting.index');
     // Route::post('setting', 'App\Http\Controllers\SettingController@update')->name('setting.update');
 
-    // Contact message
-    Route::get('/contact', 'App\Http\Controllers\ContactController@index')->name('contact.index');
-    Route::get('/contact/show/{id}', 'App\Http\Controllers\ContactController@show')->name('contact.show');
-    Route::delete('/contact/delete/{id}', 'App\Http\Controllers\ContactController@destroy')->name('contact.destroy');
+    // // Contact message
+    // Route::get('/contact', 'App\Http\Controllers\ContactController@index')->name('contact.index');
+    // Route::get('/contact/show/{id}', 'App\Http\Controllers\ContactController@show')->name('contact.show');
+    // Route::delete('/contact/delete/{id}', 'App\Http\Controllers\ContactController@destroy')->name('contact.destroy');
 });
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

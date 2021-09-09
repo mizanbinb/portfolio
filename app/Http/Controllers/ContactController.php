@@ -56,7 +56,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-       return view('admin.contact.show')
+       return view('admin.contact.show');
     }
 
     /**
@@ -90,6 +90,11 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        if($contact){
+            $contact->delete();
+            Session::flash('success', 'Contact Deleted successfully');
+        }
+
+        return redirect()->back();
     }
 }

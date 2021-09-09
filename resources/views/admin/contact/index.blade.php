@@ -38,32 +38,30 @@
                                     <th style="width: 10px">#</th>
                                     <th> Name </th>
                                     <th> Email </th>
-                                    <th> Subject </th>
+                                    <th> Phone </th>
+                                    <th> Message</th>
                                     <th style="width: 40px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        
-                                        <td class="d-flex">
-                                            <a href="" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
-                                            <form action="" class="mr-1" method="POST">
-                                                @method('DELETE')
-                                                @csrf 
-                                                <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                @foreach ($contacts as $contact)
+                                <tr>
+                                    <td>{{ $contact->id }}</td>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->phone }}</td>
+                                    <td>{{ $contact->message }}</td>
 
-                                    <tr>
-                                        <td colspan="6">
-                                            <h5 class="text-center">No messages found.</h5>
-                                        </td>
-                                    </tr>
+                                    <td class="d-flex">
+                                        <a href="" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
+                                        <form action="{{ route('contact.destroy', [$contact->id]) }}" class="mr-1" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

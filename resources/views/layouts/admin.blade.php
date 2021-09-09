@@ -38,20 +38,12 @@
     <a href="{{ route('dashboard') }}" class="brand-link">
       <img src="{{ asset('admin') }}/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Dashboard</span>
+      <span class="brand-text font-weight-light">Mizan Bin Bodrul</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{ asset('admin') }}/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="{{ route('user.profile') }}" class="d-block"></a>
-        </div>
-      </div>
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -76,7 +68,7 @@
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('about.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-tag"></i>
+              <i class="nav-icon fas fa-info-circle"></i>
               <p>
                 About
               </p>
@@ -84,7 +76,7 @@
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('contact.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-tag"></i>
+              <i class="nav-icon fas fa-envelope"></i>
               <p>
                 Contact
               </p>
@@ -100,7 +92,7 @@
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('portfolio.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-envelope"></i>
+              <i class="nav-icon fas fa-briefcase"></i>
               <p>
                 Portfolio
               </p>
@@ -108,7 +100,7 @@
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('cv.index') }}" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fa fa-file"></i>
               <p>
                 Cv
               </p>
@@ -123,14 +115,6 @@
             </a>
           </li>
           <li class="nav-header">Your Account</li>
-          <li class="nav-item mt-auto">
-            <a href="{{ route('user.profile') }}" class="nav-link">
-              <i class="nav-icon far fa-user"></i>
-              <p>
-                Your Profile
-              </p>
-            </a>
-          </li>
            <li class="nav-item mt-auto">
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
@@ -141,7 +125,7 @@
           </li>
 
           <li class="text-center mt-5">
-            <a href="" class="btn btn-primary text-white" target="_blank">
+            <a href="{{ route('website') }}" class="btn btn-primary text-white" target="_blank">
               <p class="mb-0">
                 View Website
               </p>
@@ -164,10 +148,10 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      <div class="mb-0">Developed By Zakir on <a href="https://www.youtube.com/playlist?list=PLl4v4A2HI0YixTm5AsoTu-sKxiQti4-r6">Laravel Blog Development </a>Tutorial Series</div>
+      <div class="mb-0">Developed By Mizanbinbodrul on <a href="{{ route('website') }}">Laravel Blog Development</div>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>© Copyright Mizanbinbodrul. - 2021, All Rights Reserved.</strong>
   </footer>
 </div>
 <!-- ./wrapper -->

@@ -7759,8 +7759,9 @@ textarea.form-control-lg {
 }
 
 .text-muted {
-  --bs-text-opacity: 1;
-  color: #6c757d !important;
+    text-align: -webkit-auto;
+    --bs-text-opacity: 1;
+    color: #6c757d !important;
 }
 
 .text-black-50 {
